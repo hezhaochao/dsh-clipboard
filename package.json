@@ -1,0 +1,65 @@
+{
+  "name": "dsh-clipboard",
+  "version": "0.1.0",
+  "description": "剪贴板快速引用：自动记录系统剪贴板历史（仅本地），输入框旁一键把刚才复制的内容插回来，模型也能用 MCP 工具读最近的复制 / Clipboard quick-quote for DeepSeek Harness: local history widget + MCP tools",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "clipboard",
+    "history",
+    "quick-quote",
+    "mcp",
+    "productivity"
+  ],
+  "author": {
+    "name": "hezhaochao"
+  },
+  "homepage": "https://github.com/hezhaochao/dsh-clipboard#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hezhaochao/dsh-clipboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hezhaochao/dsh-clipboard/issues"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./server": "./mcp/server.mjs",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "mcp",
+    "scripts",
+    "test",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/mcp.test.mjs",
+    "test:watcher": "powershell -NoProfile -ExecutionPolicy Bypass -File test/watcher.tests.ps1"
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-mcp-client": ">=0.1.0-rc.2 || >=0.2.0-rc.2"
+  }
+}

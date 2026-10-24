@@ -1,0 +1,10 @@
+# dsh-clipboard — DSH bundle patch 层
+#
+# 一行 cordis 条目挂起本包的宿主半边（lib/index.js），它做三件事：
+#   1. 确保剪贴板轮询器（PowerShell，单实例）在运行
+#   2. 注册 /dsh-clipboard/* 本地路由，给网页组件读历史
+#   3. 挂载 MCP 桥接，模型拿到 mcp__clipboard__recent / mcp__clipboard__get 工具
+
+- insert:
+    - id: clipboard-quote
+      name: 'dsh-clipboard'

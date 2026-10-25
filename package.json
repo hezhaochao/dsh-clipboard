@@ -1,6 +1,6 @@
 {
   "name": "dsh-clipboard",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "剪贴板快速引用：自动记录系统剪贴板历史（仅本地），输入框旁一键把刚才复制的内容插回来，模型也能用 MCP 工具读最近的复制 / Clipboard quick-quote for DeepSeek Harness: local history widget + MCP tools",
   "license": "MIT",
   "keywords": [
